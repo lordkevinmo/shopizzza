@@ -1,3 +1,10 @@
 language: ruby
 rvm:
 - 2.4.4
+deploy:
+  provider: heroku
+  api_key:
+    secure: fYEQYqE8oMh2Jaj7Uow+wFgnZ75W1/mJs1TScGiLQzjAxcj3lPZ2ErYH481ohtkkWHR2N5b1KbMXN9ivaPJkdvh8uslfn7Lo2LrZQBOLtEtoCBhKPtPpfsSokmg7xFS6Iy/84Rc5sPRLlxhfGbb3AlWeD36TyVoaUIv5EU9jOO8NHN5ajQYwN0bYl1vgZvZb23IrVSimY2wfkhGW9fwDUsiT+hErRmKLtDH2ZQxgfEV5UZNjT3O+f3POdegD7ANDSuV6lSwQBmkIxr0nrz3sRk5boK44Tcdo6vHfT0TlWlBd9juJDYk/VslxCcDf5esp8EFhggaxIQ5ML2N+XIJ83/6b/o58uGNhBsf+vRYqSI2PvyCwL9a58ToX2yrPRJgz51aE+yG7LmclPa3KCqDuefXREAtNXRR4H6nk/TDgO9Erw2Mc89DLwZzsdlaq6mEHS4E6B28ZtnOG5ztkKzqLMao6CgZ/EO8vfSiUoUqMjLKN3y/vgCzo4/RQLYh+Qchh1agT4SyDjsHohLTVETihNkWX1Nfh/o7gfaG6WUJshcF3SXYlC6X0PfNn5RGrRhvif+O+DIbYUQ17BPufaX8Ac0NZWs7QPHVi1hptasW1uqqiba+BcIua0EecJayzkaW5EM0QxnhQLqkJQK8yDH9kLlloqqr0H8CzoboMVXWhYZs=
+  app: shopizza
+  on:
+    repo: lordkevinmo/shopizzza
