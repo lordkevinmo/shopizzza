@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/50f3d1da7372d27c8e39/maintainability)](https://codeclimate.com/github/lordkevinmo/shopizzza/maintainability)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
