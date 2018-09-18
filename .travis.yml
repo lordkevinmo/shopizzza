@@ -1,10 +1,6 @@
 language: ruby
 rvm:
-- 2.2
-deploy:
-  provider: heroku
-  api_key:
-    secure: orbrDr/FdNKKVdkrYtfe3OtcSfjorUm619tJs+gv4ySv36H2B7QnYIlw7VFKiOKZt6oZ2rjO4jDwKhyey2aY3AiDa5LHsl47dovGGoFEYOuA+8DkggqVIqEkStxna8DcdFGZG3Yjm2cvg7T3XMqNkvTgnQoA3Kpy8LgLduVplekjKGQPib4N6KpXSKlHxhL6cmFmwCxWKWfHlDId3ql1Qqjiu12hzbaEm2QZKgep5eB8BzfpQLWf7+4kSDdcQWuBoBUFChcZPOUW8YQFIJuoekU2/oiZFHBZEyZqVaqQgk+dPHWKmMpT7CVSj5GAquTx0tkOYDCOyY2g0Pk/ZwEsHZeihkx8Fy97js1v5g9KbI8vpPLgagVnOZrvf7hL3Fn3IzltuwyTRutfYWQup3qjiykqY2lDUyeew4aZq93EBQuX6J5KqBXTCqc1nWJrQ0+BdP3mvYP7CKomLhVLvQEmqp7OK2zf86J4fLCBnBNyPaRN35JnFXEYRJU6FD1/dadd193fCzx9CcYPFDWO/JuSlJl6HTyTZBzeBkpXitLiO2bJbdiOYPKIUBmnIkVw4lpgrmsUOHd74Jo5+auzth6ObeQM4qMH56ifPHScU5vZdralHOWG/9puGI5yRkPDWrSQ1r0pw3hCVwWdV6n0Am/b47mFTe1oXKz5MnJEHxkvBPA=
-  app: salty-dawn-62316
-  on:
-    repo: lordkevinmo/shopizzza
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
