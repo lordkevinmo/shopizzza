@@ -8,3 +8,4 @@ deploy:
   app: shopizza
   on:
     repo: lordkevinmo/shopizzza
+  run: "rake db:migrate"
