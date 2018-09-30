@@ -21,8 +21,8 @@ class CommandesController < ApplicationController
         end 
         p @commandePizza
         newLigneCommande = LigneCommande.new
-        newLigneCommande.order=newCommande
-        newLigneCommande.pizza=@commandePizza
+        newLigneCommande.order = newCommande
+        newLigneCommande.pizza = @commandePizza
         newLigneCommande.save
       end
       @erros = @erros + "]"

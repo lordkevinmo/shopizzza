@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'commandes/index'
   post 'commandes/create', to: 'commandes#create'
   get 'commandes/view', to: 'commandes#view'
   resources :pizzas
