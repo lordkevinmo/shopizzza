@@ -1,0 +1,17 @@
+<strong>Liste des commandes</strong>
+<br><br>
+
+<% @touscommandes.each do |order| %>
+  <br>
+  <div class="container">
+    <h6 style="margin-bottom: 10px;">
+      Nom: <%= order[:order][:nom]  %>
+    </h6>
+    <h6 style="margin-bottom: 10px;">
+      Adresse: <%= order[:order][:adresse] %>
+    </h6>
+    <%= image_tag pizza[:url], style:"height: 10vh; width: 10vw;" %>
+    <br>
+  </div>
+
+<% end %>
