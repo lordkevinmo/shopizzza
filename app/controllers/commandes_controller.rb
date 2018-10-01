@@ -13,7 +13,7 @@ class CommandesController < ApplicationController
     p @pizzas
     @erros="Erros : [";
       @pizzas.each do |pizza|
-        @commandePizza = Pizza.where(name: pizza).first
+        @commandePizza = Pizza.where(nom: pizza).first
         if @commandePizza.nil?
           @erros= @erros+" - Aucune pizza avec le nom = " +pizza
           p @erros
