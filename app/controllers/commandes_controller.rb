@@ -1,47 +1,75 @@
 class CommandesController < ApplicationController
-  
   skip_before_action :verify_authenticity_token, :only => [:create]
-  
-  def create 
-    p "CommandesController"
-    @nom = params[:nom]
-    @adresse = params[:adresse]
-    p @adresse
-    @pizzas = params[:pizzas]
-    newCommande = Commande.new(:nom => @nom, :adresse => @adresse)
-    newCommande.save
-    p @pizzas
-    @erros="Erros : [";
-      @pizzas.each do |pizza|
-        @commandePizza = Pizza.where(nom: pizza).first
-        if @commandePizza.nil?
-          @erros= @erros+" - Aucune pizza avec le nom = " +pizza
-          p @erros
-          next
-        end 
-        p @commandePizza
-        newLigneCommande = LigneCommande.new
-        newLigneCommande.order = newCommande
-        newLigneCommande.pizza = @commandePizza
-        newLigneCommande.save
-      end
-      @erros = @erros + "]"
-   end
-  
-    def view
-      @commandes= []
-      @touscommandes = Commande.all
-      @touscommandes.each do |comm|
-        pizzas = []
-        @orderlines=LigneCommande.where(commande: comm)
-        @lignecommandes.each do |lignecommande|
-            pizza = Pizza.find(lignecommande[:pizza_id])
-            pizzas.push(pizza)
-        end
-        p "commandes"
-        @commandes.push({commande: comm ,pizzas: pizzas})
-        p pizzas
+  before_action :set_commande, only: [:show, :edit, :update, :destroy]
+
+  # GET /commandes
+  # GET /commandes.json
+  def index
+    @commandes = Commande.all
+  end
+
+  # GET /commandes/1
+  # GET /commandes/1.json
+  def show
+  end
+
+  # GET /commandes/new
+  def new
+    @commande = Commande.new
+  end
+
+  # GET /commandes/1/edit
+  def edit
+  end
+
+  # POST /commandes
+  # POST /commandes.json
+  def create
+    @commande = Commande.new(commande_params)
+
+    respond_to do |format|
+      if @commande.save
+        format.html { redirect_to @commande, notice: 'Commande was successfully created.' }
+        format.json { render :show, status: :created, location: @commande }
+      else
+        format.html { render :new }
+        format.json { render json: @commande.errors, status: :unprocessable_entity }
       end
     end
-  
+  end
+
+  # PATCH/PUT /commandes/1
+  # PATCH/PUT /commandes/1.json
+  def update
+    respond_to do |format|
+      if @commande.update(commande_params)
+        format.html { redirect_to @commande, notice: 'Commande was successfully updated.' }
+        format.json { render :show, status: :ok, location: @commande }
+      else
+        format.html { render :edit }
+        format.json { render json: @commande.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /commandes/1
+  # DELETE /commandes/1.json
+  def destroy
+    @commande.destroy
+    respond_to do |format|
+      format.html { redirect_to commandes_url, notice: 'Commande was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_commande
+      @commande = Commande.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def commande_params
+      params.fetch(:commande, {})
+    end
 end
