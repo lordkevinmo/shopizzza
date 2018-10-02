@@ -73,7 +73,7 @@ class CommandesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commande_params
-      put params.inspect
+      puts params.inspect
       p params.require(:commande).permit(:nom, :adresse)
       #params.fetch(:commande, {})
     end
