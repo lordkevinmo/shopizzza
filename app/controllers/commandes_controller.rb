@@ -26,6 +26,9 @@ class CommandesController < ApplicationController
   # POST /commandes.json
   def create
     @commande = Commande.new(commande_params)
+    params.fetch(:pizzas).each do |pizza|
+      @commande.pizzas << Pizza.find(pizza)
+    end
 
     respond_to do |format|
       if @commande.save
@@ -70,6 +73,8 @@ class CommandesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commande_params
-      params.fetch(:commande, {})
+      put params.inspect
+      p params.require(:commande).permit(:nom, :adresse)
+      #params.fetch(:commande, {})
     end
 end
